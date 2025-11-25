@@ -1,0 +1,5 @@
+time,type,detail,amount,balance
+2025-11-18 13:41:20,LOGIN,Đăng nhập 1003,0,700000
+2025-11-18 13:41:24,LOGIN,Đăng nhập 1003,0,700000
+2025-11-18 13:41:32,DEPOSIT,Nạp tiền,100000,800000
+2025-11-18 13:42:55,ERROR,Insufficient funds,0,800000
