@@ -1,0 +1,30 @@
+plugins {
+    id 'application'
+    id 'org.openjfx.javafxplugin' version '0.0.14'
+}
+
+java { toolchain { languageVersion = JavaLanguageVersion.of(21) } }
+repositories { mavenCentral() }
+
+dependencies {
+    implementation files('libs/rmi-common-1.0.0.jar')
+}
+
+javafx {
+    version = '21'
+    modules = ['javafx.controls','javafx.fxml']
+}
+
+application { mainClass = 'vn.vku.rmi.client.ClientApp' }
+
+tasks.register('runClient', JavaExec) {
+    group = 'application'
+    description = 'Run JavaFX Client'
+    classpath = sourceSets.main.runtimeClasspath
+    mainClass = 'vn.vku.rmi.client.ClientApp'
+    jvmArgs = [
+        '--module-path', configurations.runtimeClasspath.asPath,
+        '--add-modules', 'javafx.controls,javafx.fxml'
+    ]
+}
+wrapper { gradleVersion = '8.10.2' }

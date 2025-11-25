@@ -1,0 +1,11 @@
+.header {
+  -fx-font-size: 16px;
+  -fx-font-weight: bold;
+}
+.balance {
+  -fx-font-size: 28px;
+  -fx-font-weight: bold;
+}
+.table-row-cell:filled:selected {
+  -fx-background-insets: 0;
+}
